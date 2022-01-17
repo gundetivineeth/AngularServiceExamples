@@ -13,7 +13,11 @@ export class NewAccountComponent implements OnInit {
   @ViewChild('accountNameRef') accountNameRef:ElementRef;
   @ViewChild('statusRef') statusRef:ElementRef;
 
-  constructor(private loggingService:LoggingService,private accountsService:AccountsService) { }
+  constructor(private loggingService:LoggingService,private accountsService:AccountsService) { 
+    this.accountsService.statusAlert.subscribe(
+      (status:string) => alert('New status : '+ status)
+    )
+  }
 
   ngOnInit(): void {
   }

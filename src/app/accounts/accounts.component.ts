@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AccountsService } from '../accounts.service';
 import { LoggingService } from '../logging.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class AccountsComponent implements OnInit {
 
   @Input() accounts;
 
-  constructor(private loggingService:LoggingService) { }
+  constructor(private loggingService:LoggingService,private accountsService:AccountsService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,7 @@ export class AccountsComponent implements OnInit {
   onClickStatus(status:string){
     this.accounts.status = status;
     this.loggingService.logToConsole(status);
+    this.accountsService.statusAlert.emit(status);
   }
   
 }

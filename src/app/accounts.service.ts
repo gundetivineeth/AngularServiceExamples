@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,9 @@ export class AccountsService {
   }
 ]
 
-  constructor() { 
+statusAlert = new EventEmitter<string>();
+
+constructor() { 
 
   }
   onAccountAdd(accounts){
