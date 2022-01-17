@@ -16,16 +16,9 @@ export class AccountsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickActive(){
-    this.accounts.status = "Active";
-    this.loggingService.logToConsole("Active");
+  onClickStatus(status:string){
+    this.accounts.status = status;
+    this.loggingService.logToConsole(status);
   }
-  onClickInActive(){
-    this.accounts.status = "InActive";
-    this.loggingService.logToConsole("InActive");
-  }
-  onClickUnknown(){
-    this.accounts.status = "Unknown";
-    this.loggingService.logToConsole("Unknown");
-  }
+  
 }
