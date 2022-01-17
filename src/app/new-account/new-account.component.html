@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-12">
+        <label for="accountName">Account Name</label>
+        <input type="text" class="form-control" #accountNameRef>
+        <label for="accountStatus">Account Status</label>
+        <select name="status" class="form-control" #statusRef>
+            <option>Active</option>
+            <option>InActive</option>
+            <option>Unknown</option>
+        </select>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="onAddAccount()">Add Account</button>
+    </div>
+</div>
+<hr>

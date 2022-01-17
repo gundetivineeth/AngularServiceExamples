@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      {{accounts.accountName}}
+    </div>
+    <div class="panel-body">
+      <p>Account status is {{accounts.status}}</p> 
+      <button type="button" class="btn btn-default" (click)="onClickActive()">Set status to 'Active'</button>
+      <button type="button" class="btn btn-default" (click)="onClickInActive()">Set status to 'InActive'</button>
+      <button type="button" class="btn btn-default"(click)="onClickUnknown()">Set status to 'Unknown'</button>
+    </div>
+</div>
