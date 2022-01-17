@@ -1,6 +1,6 @@
 <div class="container">
   <br>
-  <app-new-account (accounts)="onAccountAdd($event)"></app-new-account>
+  <app-new-account></app-new-account>
   <div class="row">
     <div class="col-xs-12">
       <app-accounts *ngFor="let account of accountList" [accounts]="account"></app-accounts>

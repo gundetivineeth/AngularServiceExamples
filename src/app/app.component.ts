@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccountsService } from './accounts.service';
 
 @Component({
   selector: 'app-root',
@@ -6,22 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularServiceExamples';
-  accountList =[{
-    accountName:"Test",
-    status:"Active"
-  },
-  {
-    accountName: "Test another status",
-    status:"InActive"
-  }
-  ,
-  {
-    accountName: "Test another status",
-    status:"Unknow"
-  }
-]
-onAccountAdd(accounts){
-this.accountList.push(accounts);
-}
+  
+ constructor(private accountsService:AccountsService){
+
+ }
+  accountList = this.accountsService.accountList;
+ 
+
 }

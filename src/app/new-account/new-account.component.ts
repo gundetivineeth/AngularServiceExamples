@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { AccountsService } from '../accounts.service';
 import { LoggingService } from '../logging.service';
 
 @Component({
@@ -9,17 +10,16 @@ import { LoggingService } from '../logging.service';
 })
 export class NewAccountComponent implements OnInit {
 
-  @Output() accounts = new EventEmitter<{accountName:string,status:string}>();
   @ViewChild('accountNameRef') accountNameRef:ElementRef;
   @ViewChild('statusRef') statusRef:ElementRef;
 
-  constructor(private loggingService:LoggingService) { }
+  constructor(private loggingService:LoggingService,private accountsService:AccountsService) { }
 
   ngOnInit(): void {
   }
 
   onAddAccount(){
-    this.accounts.emit({
+    this.accountsService.onAccountAdd({
       accountName:this.accountNameRef.nativeElement.value,
       status:this.statusRef.nativeElement.value
     });
